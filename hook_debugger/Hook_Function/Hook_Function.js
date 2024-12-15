@@ -19,6 +19,9 @@
         if (this === Function) {
             return 'function Function() { [native code] }';
         }
+        else if (this === Function.prototype.toString) {
+            return 'function toString() { [native code] }';
+        }
         return temp_toString.apply(this, arguments);
     }
 
