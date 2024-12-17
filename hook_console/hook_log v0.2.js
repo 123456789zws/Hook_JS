@@ -12,6 +12,16 @@
 (function () {
     'use strict';
 
+    // let temp_freeze = Object.freeze;
+    // Object.freeze = function () {
+    //     if (typeof arguments[0] === 'object' && arguments[0] === console) {
+    //         return console;
+    //     }
+    //     else {
+    //         return temp_freeze(...arguments);
+    //     }
+    // }
+
     let waiting_time = 3; // 等待时间，单位为秒
     let temp_log = console.log;
     let flag = 0;
