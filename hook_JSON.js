@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         hook_JSON
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/0xsdeo/Hook_JS
 // @version      2024-10-29
-// @description  Hook_JSON
+// @description  重写parse和stringify方法，以此来获取调用这个方法所传入的内容以及堆栈信息。
 // @author       0xsdeo
 // @match        http://*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    var json_p = JSON.parse;
+    let json_p = JSON.parse;
     JSON.parse = function(str){
         console.log(str);
         console.log(new Error().stack);
@@ -20,7 +20,7 @@
         return json_p(str);
     }
 
-    var json_s = JSON.stringify;
+    let json_s = JSON.stringify;
     JSON.stringify = function(obj){
         console.log(obj);
         console.log(new Error().stack);
