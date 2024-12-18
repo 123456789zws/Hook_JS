@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Hook_cookie
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/0xsdeo/Hook_JS
 // @version      2024-11-28
 // @description  set cookie -> log stack and cookie
 // @author       0xsdeo
@@ -12,17 +12,17 @@
 (function () {
     'use strict';
 
-    var temp_cookie = document.cookie;
+    document.temp_cookie = document.cookie;
 
     Object.defineProperty(document, "cookie", {
         get: function () {
-            return temp_cookie;
+            return document.temp_cookie;
         },
         set: function (cookie) {
             console.log(cookie);
             console.log(new Error().stack);
-            var key_arr = [];
-            var val_arr = [];
+            let key_arr = [];
+            let val_arr = [];
 
             if (cookie.split('=').length > 2) {
                 var temp_k = cookie.split('=')[0];
@@ -31,17 +31,17 @@
                 val_arr.push(temp_val);
             }
 
-            if (!(temp_cookie === '')) {
-                temp_cookie.split('; ').forEach(function (key) {
-                    var k = key.split('=')[0];
-                    var val = key.split('=')[1];
+            if (!(document.temp_cookie === '')) {
+                document.temp_cookie.split('; ').forEach(function (key) {
+                    let k = key.split('=')[0];
+                    let val = key.split('=')[1];
                     if (typeof temp_k != 'undefined' && temp_k === k) {
                     } else {
                         key_arr.push(k);
                         val_arr.push(val);
                     }
                 })
-                temp_cookie = '';
+                document.temp_cookie = '';
             }
 
             if (!(cookie.split('=').length > 2)) {
@@ -49,7 +49,7 @@
                     key_arr.push(cookie.split('=')[0]);
                     val_arr.push(cookie.split('=')[1]);
                 } else {
-                    for (var i = 0; i < key_arr.length; i++) {
+                    for (let i = 0; i < key_arr.length; i++) {
                         if (key_arr[i] === cookie.split('=')[0]) {
                             val_arr[i] = cookie.split('=')[1];
                             break;
@@ -62,11 +62,11 @@
                 }
             }
 
-            for (var i = 0; i < key_arr.length; i++) {
+            for (let i = 0; i < key_arr.length; i++) {
                 if (i === key_arr.length - 1) {
-                    temp_cookie = temp_cookie + key_arr[i] + '=' + val_arr[i];
+                    document.temp_cookie = document.temp_cookie + key_arr[i] + '=' + val_arr[i];
                 } else {
-                    temp_cookie = temp_cookie + key_arr[i] + '=' + val_arr[i] + '; ';
+                    document.temp_cookie = document.temp_cookie + key_arr[i] + '=' + val_arr[i] + '; ';
                 }
             }
         }
