@@ -57,7 +57,7 @@
 
 注意事项：
 
-1. 使用该脚本时尽量不要开着F12，最好是进入网站时等几秒再打开F12(当然开着F12也是可以的)。
+1. 当使用该脚本hook时，刷新或进入网站时尽量不要开着F12，最好是等几秒再打开F12，这样做主要是为了防止漏掉一些原本js log的内容(当然开着F12也是可以的)。
 2. 该脚本主要是为了防止hook_log v0.1注意事项中提到的那种情况，例如我就拿v0.2脚本hook那个报异常的案例：
 ![1734455566322](image/README/1734455566322.png)
 成功打印出内容并没有报错。
@@ -142,7 +142,7 @@ setInterval(dbg,3000);
 
 - <a href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_debugger/Hook_Function/Hook_Function.js">hook_debugger/Hook_Function/Hook_Function.js</a>
 
-该目录下的脚本可bypass：
+该脚本可bypass：
 
 new Function --> debugger
 
