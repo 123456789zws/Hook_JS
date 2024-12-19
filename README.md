@@ -107,7 +107,9 @@
 该目录下的脚本可bypass：
 
 new Function --> debugger
+
 constructor --> debugger
+
 eval --> debugger
 
 也就是说大部分存在无限debugger的站点皆可bypass掉。
@@ -143,6 +145,7 @@ setInterval(dbg,3000);
 该目录下的脚本可bypass：
 
 new Function --> debugger
+
 constructor --> debugger
 
 - <a href="https://github.com/0xsdeo/Hook_JS/tree/main/hook_debugger/Hook_eval">hook_debugger/Hook_eval</a>
@@ -160,3 +163,7 @@ Hook_eval亦是如此，所以要是两个一块用的话可能会出一些问�
 ## Contact
 
 如有bug或其他问题可提交issues，或者关注公众号Spade sec联系我。
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=0xsdeo/Hook_JS&type=Date)](https://star-history.com/#0xsdeo/Hook_JS&Date)
