@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Hook_cookie
+// @name         Hook_cookie v0.1
 // @namespace    https://github.com/0xsdeo/Hook_JS
 // @version      2024-11-28
 // @description  set cookie -> log stack and cookie
