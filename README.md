@@ -91,9 +91,11 @@
 ![1734623125248](image/README/1734623125248.png)
 ![1734534955744](image/README/1734534955744.png)
 
+详见：<a href="https://mp.weixin.qq.com/s/yBoy-jG3grI-t0EUIAQNJg">JS逆向系列09-Js Hook</a>
+
 - <a href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_xhr.js">Hook_xhr.js</a>
 
-脚本描述：当设置了请求头时就会打印堆栈信息和设置的请求头内容；当发送了请求就会打印堆栈信息和请求信息。
+脚本描述：当设置了请求头时就会打印堆栈信息和设置的请求头内容；发送请求前会打印出堆栈信息和请求信息。
 
 效果：
 ![1734626741352](image/README/1734626741352.png)
