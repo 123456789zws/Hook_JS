@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Bypass_Debugger
+// @name         Bypass_Debugger(Proxy)
 // @namespace    https://github.com/0xsdeo/Bypass_Debugger
-// @version      2024-12-06
+// @version      2025-1-02
 // @description  Bypass new Function --> debugger && constructor --> debugger && eval --> debugger
 // @author       0xsdeo
 // @match        http://*/*
@@ -9,7 +9,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     let temp_eval = eval;
@@ -37,17 +37,6 @@
 
     let Bypass_debugger = Function;
 
-    Function = function () {
-        for (let i = 0; i < arguments.length; i++) {
-            if (typeof arguments[i] == "string") {
-                arguments[i] = arguments[i].replaceAll(/debugger/g, '');
-            }
-        }
-        return Bypass_debugger(...arguments);
-    }
-
-    Function.prototype = Bypass_debugger.prototype;
-
     Function.prototype.constructor = function () {
         for (let i = 0; i < arguments.length; i++) {
             if (typeof arguments[i] == "string") {
@@ -58,4 +47,25 @@
     }
 
     Function.prototype.constructor.prototype = Function.prototype;
+
+    let handler = {
+        apply: function (target, thisArg, argumentsList) {
+            for (let i = 0; i < argumentsList.length; i++) {
+                if (typeof argumentsList[i] == "string") {
+                    argumentsList[i] = argumentsList[i].replaceAll(/debugger/g, '');
+                }
+            }
+            return Bypass_debugger(...argumentsList);
+        },
+        construct: function (target, argumentsList, newTarget) {
+            for (let i = 0; i < argumentsList.length; i++) {
+                if (typeof argumentsList[i] == "string") {
+                    argumentsList[i] = argumentsList[i].replaceAll(/debugger/g, '');
+                }
+            }
+            return Bypass_debugger(...argumentsList);
+        },
+    };
+
+    Function = new Proxy(Function, handler);
 })();

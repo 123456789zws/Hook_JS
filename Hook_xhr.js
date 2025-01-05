@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Hook_xhr
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/0xsdeo/Hook_JS
 // @version      2024-11-30
 // @description  set RequestHeader -> log stack and RequestHeader info && send Request -> log stack and request info
 // @attention    当打印的request内容为[object Blob]时，则表示请求内容为二进制流。
@@ -13,9 +13,9 @@
 (function () {
     'use strict';
 
-    var hook_open = XMLHttpRequest.prototype.open;
-    var hook_setRequestHeader = XMLHttpRequest.prototype.setRequestHeader;
-    var hook_send = XMLHttpRequest.prototype.send;
+    let hook_open = XMLHttpRequest.prototype.open;
+    let hook_setRequestHeader = XMLHttpRequest.prototype.setRequestHeader;
+    let hook_send = XMLHttpRequest.prototype.send;
 
     XMLHttpRequest.prototype.open = function () {
         this.method = arguments[0];
