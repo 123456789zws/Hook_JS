@@ -9,6 +9,21 @@
 
 ## 脚本描述及注意事项
 
+- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%84%9A%E6%9C%AC/Fixed_window_size.js">实用小脚本/Fixed_window_size.js</a>
+
+脚本描述：js获取浏览器高度或宽度时获取到的是脚本中设置的固定值，如果网站js尝试去设置高度和宽度值会直接去设置固定值，并不会按照网站js设置的值去设置。
+
+注意事项：该脚本设置的高度和宽度默认值是按照我浏览器未打开Devtools的值设置的，`window.innerHeight`：
+![1736610895181](image/README/1736610895181.png)
+`window.innerWidth`:
+![1736610927020](image/README/1736610927020.png)
+使用时可自行更改：
+![1736611230972](image/README/1736611230972.png)
+
+在打开Devtools的前提下未Hook和已Hook的效果图：
+![1736611037870](image/README/1736611037870.png)
+![1736611051478](image/README/1736611051478.png)
+
 - <a href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_cookie/Hook_cookie%20v0.1.js">Hook_cookie/Hook_cookie v0.1.js</a>
 
 脚本描述：当js设置cookie时就会打印其堆栈信息和设置的cookie。
