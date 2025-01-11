@@ -2,7 +2,7 @@
 // @name         Fixed_window_size
 // @namespace    http://tampermonkey.net/
 // @version      2025-01-11
-// @description  固定浏览器高度宽度值
+// @description  js获取浏览器高度或宽度时获取到的是脚本中设置的固定值，如果网站js尝试去设置高度和宽度值会直接去设置固定值，并不会按照网站js设置的值去设置。
 // @author       0xsdeo
 // @match        http://*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
