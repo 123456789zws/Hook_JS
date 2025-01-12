@@ -11,7 +11,7 @@
 
 - <a href="https://github.com/0xsdeo/Hook_JS/blob/main/%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%84%9A%E6%9C%AC/Fixed_window_size.js">实用小脚本/Fixed_window_size.js</a>
 
-脚本描述：js获取浏览器高度或宽度时获取到的是脚本中设置的固定值，如果网站js尝试去设置高度和宽度值会直接去设置固定值，并不会按照网站js设置的值去设置。
+脚本描述：js获取浏览器高度(window.innerHeight)或宽度(window.innerWidth)时获取到的是脚本中设置的固定值，如果网站js尝试去设置高度和宽度值时会直接去设置固定值，并不会按照网站js设置的值去设置。
 
 注意事项：该脚本设置的高度和宽度默认值是按照我浏览器未打开Devtools的值设置的，`window.innerHeight`：
 ![1736610895181](image/README/1736610895181.png)
