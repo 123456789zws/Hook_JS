@@ -7,9 +7,25 @@
 3. 以下所有本人所写的脚本中如果包含`console.log(new Error().stack);`这句代码，全都可以改写为`debugger`，以方便使用时查看堆栈。
 4. 当hook后依然不能实现功能，请自查油猴或其他插件加载的脚本是不是做了同样的操作，例如重写Function等等，个人建议使用时除不是自己写的脚本(指没有做要用的脚本同样动作的)都关闭。
 
+## 脚本目录
+
+- <a href="#Fixed_window_size">实用小脚本/Fixed_window_size.js</a>
+- <a href="#Hook_cookie v0.1">Hook_cookie/Hook_cookie v0.1.js</a>
+- <a href="#Hook_cookie v0.2">Hook_cookie/Hook_cookie v0.2.js</a>
+- <a href="#hook_clear">hook_console/hook_clear.js</a>
+- <a href="#hook_log v0.1">hook_console/hook_log v0.1.js</a>
+- <a href="#hook_log v0.2">hook_console/hook_log v0.2.js</a>
+- <a href="#hook_close">hook_window/hook_close.js</a>
+- <a href="#hook_history">hook_window/hook_history.js</a>
+- <a href="#hook_JSON">hook_JSON.js</a>
+- <a href="#Hook_xhr">Hook_xhr.js</a>
+- <a href="#Bypass_Debugger">hook_debugger/Bypass_Debugger</a>
+- <a href="#Hook_Function">hook_debugger/Hook_Function/Hook_Function.js</a>
+- <a href="#Hook_eval">hook_debugger/Hook_eval</a>
+
 ## 脚本描述及注意事项
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%84%9A%E6%9C%AC/Fixed_window_size.js">实用小脚本/Fixed_window_size.js</a>
+- <a id="Fixed_window_size" href="https://github.com/0xsdeo/Hook_JS/blob/main/%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%84%9A%E6%9C%AC/Fixed_window_size.js">实用小脚本/Fixed_window_size.js</a>
 
 脚本描述：js获取浏览器高度(window.innerHeight)或宽度(window.innerWidth)时获取到的是脚本中设置的固定值，如果网站js尝试去设置高度和宽度值时会直接去设置固定值，并不会按照网站js设置的值去设置。
 
@@ -24,7 +40,7 @@
 ![1736611037870](image/README/1736611037870.png)
 ![1736611051478](image/README/1736611051478.png)
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_cookie/Hook_cookie%20v0.1.js">Hook_cookie/Hook_cookie v0.1.js</a>
+- <a id="Hook_cookie v0.1" href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_cookie/Hook_cookie%20v0.1.js">Hook_cookie/Hook_cookie v0.1.js</a>
 
 脚本描述：当js设置cookie时就会打印其堆栈信息和设置的cookie。
 
@@ -37,7 +53,7 @@
 
 详见：<a href="https://mp.weixin.qq.com/s/28q2Hd0ZLRyBRyRT_8JE0g">JS逆向系列12-深入Js Hook</a>
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_cookie/Hook_cookie%20v0.2.js">Hook_cookie/Hook_cookie v0.2.js</a>
+- <a id="Hook_cookie v0.2" href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_cookie/Hook_cookie%20v0.2.js">Hook_cookie/Hook_cookie v0.2.js</a>
 
 脚本描述：当js设置cookie时就会打印其堆栈信息和设置的cookie。
 
@@ -47,13 +63,13 @@
 
 效果同v0.1脚本。
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_console/hook_clear.js">hook_console/hook_clear.js</a>
+- <a id="hook_clear" href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_console/hook_clear.js">hook_console/hook_clear.js</a>
 
 脚本描述：重写`console.clear`方法，以此来禁止js清除控制台数据。
 
 详见：<a href="https://mp.weixin.qq.com/s/r-ZcP2knpmoVEK0y_26xBw">JS逆向系列10-反调试与反反调试</a>
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_console/hook_log%20v0.1.js">hook_console/hook_log v0.1.js</a>
+- <a id="hook_log v0.1" href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_console/hook_log%20v0.1.js">hook_console/hook_log v0.1.js</a>
 
 脚本描述：通过冻结console对象来禁止js重写log方法。
 
@@ -66,7 +82,7 @@
 
 详见：<a href="https://mp.weixin.qq.com/s/l6_m3x3TbKDma_eexxx-Zw">JS逆向系列13-反调试之console.log</a>
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_console/hook_log%20v0.2.js">hook_console/hook_log v0.2.js</a>
+- <a id="hook_log v0.2" href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_console/hook_log%20v0.2.js">hook_console/hook_log v0.2.js</a>
 
 脚本描述：通过toString方法判断console.log方法是否被重写，以此来防止js重写log方法。
 
@@ -86,19 +102,19 @@
 
 **注：这两个脚本一定不要混用！！！**
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_window/hook_close.js">hook_window/hook_close.js</a>
+- <a id="hook_close" href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_window/hook_close.js">hook_window/hook_close.js</a>
 
 脚本描述：重写close方法，以此来避免网站反调试关闭当前页面。
 
 详见：<a href="https://mp.weixin.qq.com/s/r-ZcP2knpmoVEK0y_26xBw">JS逆向系列10-反调试与反反调试</a>
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_window/hook_history.js">hook_window/hook_history.js</a>
+- <a id="hook_history" href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_window/hook_history.js">hook_window/hook_history.js</a>
 
 脚本描述：重写go和back方法，以此来避免网站反调试返回上一页或某个特定历史页面。
 
 详见：<a href="https://mp.weixin.qq.com/s/r-ZcP2knpmoVEK0y_26xBw">JS逆向系列10-反调试与反反调试</a>
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_JSON.js">hook_JSON.js</a>
+- <a id="hook_JSON" href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_JSON.js">hook_JSON.js</a>
 
 脚本描述：重写parse和stringify方法，以此来获取调用这个方法所传入的内容以及堆栈信息。
 
@@ -108,7 +124,7 @@
 
 详见：<a href="https://mp.weixin.qq.com/s/yBoy-jG3grI-t0EUIAQNJg">JS逆向系列09-Js Hook</a>
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_xhr.js">Hook_xhr.js</a>
+- <a id="Hook_xhr" href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_xhr.js">Hook_xhr.js</a>
 
 脚本描述：当设置了请求头时就会打印堆栈信息和设置的请求头内容；发送请求前会打印出堆栈信息和请求信息。
 
@@ -119,7 +135,7 @@
 ![1734623360246](image/README/1734623360246.png)
 ![1734623312217](image/README/1734623312217.png)
 
-- <a href="https://github.com/0xsdeo/Hook_JS/tree/main/hook_debugger/Bypass_Debugger">hook_debugger/Bypass_Debugger</a>
+- <a id="Bypass_Debugger" href="https://github.com/0xsdeo/Hook_JS/tree/main/hook_debugger/Bypass_Debugger">hook_debugger/Bypass_Debugger</a>
 
 该目录下的脚本可bypass：
 
@@ -161,7 +177,7 @@ setInterval(dbg,3000);
 
 5. Bypass_Debugger和Bypass_Debugger(Proxy)这两个脚本都可以使用，两个脚本的区别就是Bypass_Debugger(Proxy)脚本是通过Proxy重写的Function，我的建议是继续使用Bypass_Debugger脚本，Bypass_Debugger(Proxy)脚本可以拿来做学习研究。
 
-- <a href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_debugger/Hook_Function/Hook_Function.js">hook_debugger/Hook_Function/Hook_Function.js</a>
+- <a id="Hook_Function" href="https://github.com/0xsdeo/Hook_JS/blob/main/hook_debugger/Hook_Function/Hook_Function.js">hook_debugger/Hook_Function/Hook_Function.js</a>
 
 该脚本可bypass：
 
@@ -169,7 +185,7 @@ new Function --> debugger
 
 constructor --> debugger
 
-- <a href="https://github.com/0xsdeo/Hook_JS/tree/main/hook_debugger/Hook_eval">hook_debugger/Hook_eval</a>
+- <a id="Hook_eval" href="https://github.com/0xsdeo/Hook_JS/tree/main/hook_debugger/Hook_eval">hook_debugger/Hook_eval</a>
 
 该目录下的脚本可bypass：
 
