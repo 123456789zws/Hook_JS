@@ -10,6 +10,7 @@
 
 ## 脚本目录
 
+- <a href="#Hook_fetch">Hook_fetch.js</a>
 - <a href="#Fixed_window_size">实用小脚本/Fixed_window_size.js</a>
 - <a href="#Hook_cookie v0.1">Hook_cookie/Hook_cookie v0.1.js</a>
 - <a href="#Hook_cookie v0.2">Hook_cookie/Hook_cookie v0.2.js</a>
@@ -25,6 +26,13 @@
 - <a href="#Hook_eval">hook_debugger/Hook_eval</a>
 
 ## 脚本描述及注意事项
+
+- <a id="Hook_fetch" href="https://github.com/0xsdeo/Hook_JS/blob/main/Hook_fetch.js">Hook_fetch.js</a>
+
+脚本描述：当通过fetch请求时会打印出传进的参数以及堆栈信息。
+
+效果：
+![1737015741266](image/README/1737015741266.png)
 
 - <a id="Fixed_window_size" href="https://github.com/0xsdeo/Hook_JS/blob/main/%E5%AE%9E%E7%94%A8%E5%B0%8F%E8%84%9A%E6%9C%AC/Fixed_window_size.js">实用小脚本/Fixed_window_size.js</a>
 
